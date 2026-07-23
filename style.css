@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff0f8;
+    font-family: cursive, sans-serif;
+    color: #5d2a4a;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hediye {
+    text-align: center;
+    padding: 50px 35px;
+    background: white;
+    border: 8px solid #ff9ec1;
+    border-radius: 20px;
+    max-width: 430px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.ribbon {
+    font-size: 55px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.kalp {
+    font-size: 80px;
+    margin: 10px 0 20px;
+}
+
+h1 {
+    font-size: 2.7rem;
+    margin: 5px 0 15px;
+    color: #e91e63;
+}
+
+.ecrin-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 1.3rem;
+    margin: 18px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 13px 35px;
+    font-size: 1.2rem;
+    background: #FDC8CD;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
