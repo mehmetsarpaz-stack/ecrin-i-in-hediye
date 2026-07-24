@@ -58,3 +58,10 @@ function openGift() {
 setInterval(() => {
     if (Math.random() > 0.45) createHeart();
 }, 750);
+function openGift() {
+    
+  
+var sarki = document.getElementById("ozelSarki");
+    sarki.play().catch(function(error) {
+        console.log("Müzik çalma hatası:", error);
+    });
