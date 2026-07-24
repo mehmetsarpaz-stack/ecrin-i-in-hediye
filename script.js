@@ -1,3 +1,9 @@
+//kalpler için burasu
+setInterval(() => {
+    if (Math.random() > 0.45) createHeart();
+}, 750);
+
+//burası da kalplerin çıkacağı yer
 function createHeart() {
     const h = document.createElement('div');
     h.style.position = 'fixed';
@@ -6,6 +12,7 @@ function createHeart() {
     h.style.bottom = '-50px';
     h.textContent = '💖';
     h.style.opacity = '0.65';
+    h.style.zIndex = '9999'; 
     document.body.appendChild(h);
 
     let y = 0;
@@ -20,12 +27,20 @@ function createHeart() {
         }
     }, 28);
 }
-
+//muzik yeri
 function openGift() {
+    
+    var sarki = document.getElementById("ozelSarki");
+    if (sarki) {
+        sarki.play().catch(function(error) {
+            console.log("Müzik çalma hatası:", error);
+        });
+    }
+
     const msgs = [
         "seni çok seviyorum",
         "sana her zaman destek olacağım",
-        "sazen salak gibi davranıyorum bir eşek köle olarak",
+        "bazen salak gibi davranıyorum bir eşek köle olarak",
         "kalbim seninle olacak her zaman Ecrin 💖",
         "seni herşeyden çok seviyorum",
         "Her ne yaşanırsa yaşansın her zaman yanındayım",
@@ -44,25 +59,15 @@ function openGift() {
     msg.style.borderRadius = '18px';
     msg.style.fontSize = '1.6rem';
     msg.style.boxShadow = '0 8px 25px #F3A0A9';
+    msg.style.zIndex = '10000'; // Mesajın her şeyin en üstünde görünmesi için
     msg.textContent = msgs[Math.floor(Math.random() * msgs.length)];
     document.body.appendChild(msg);
 
+  
     for (let i = 0; i < 28; i++) {
         setTimeout(createHeart, i * 55);
     }
 
+    // Mesaj kutusunu 2.6 saniye sonra ekrandan kaldırır
     setTimeout(() => msg.remove(), 2600);
-}
-
-
-setInterval(() => {
-    if (Math.random() > 0.45) createHeart();
-}, 750);
-function openGift() {
-    
-  
-var sarki = document.getElementById("ozelSarki");
-    sarki.play().catch(function(error) {
-        console.log("Müzik çalma hatası:", error);
-    });
 }
