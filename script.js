@@ -65,3 +65,4 @@ var sarki = document.getElementById("ozelSarki");
     sarki.play().catch(function(error) {
         console.log("Müzik çalma hatası:", error);
     });
+}
