@@ -1,4 +1,3 @@
-
 setInterval(() => {
     if (Math.random() > 0.45) createHeart();
 }, 750);
@@ -31,7 +30,6 @@ function createHeart() {
 
 
 function openGift() {
- 
     var sarki = document.getElementById("ozelSarki");
     if (sarki) {
         sarki.play().catch(function(error) {
@@ -50,15 +48,16 @@ function openGift() {
         "sen benim hayatımın devam etme sebebisin",
     ];
     
-  
-    const eskiMsg = document.getElementById('aktifMesajKutusu');
-    if (eskiMsg) eskiMsg.remove();
 
     const msg = document.createElement('div');
-    msg.id = 'aktifMesajKutusu';
     msg.style.position = 'fixed';
-    msg.style.top = '50%';
-    msg.style.left = '50%';
+    
+   
+    const rastgeleTop = Math.floor(Math.random() * 50) + 15;
+    const rastgeleLeft = Math.floor(Math.random() * 50) + 15;
+    
+    msg.style.top = rastgeleTop + '%';
+    msg.style.left = rastgeleLeft + '%';
     msg.style.transform = 'translate(-50%, -50%)';
     msg.style.background = '#ffffff';
     msg.style.padding = '35px 45px';
@@ -73,20 +72,8 @@ function openGift() {
     msg.style.width = '85%';
     msg.style.maxWidth = '450px';
 
-    msg.innerHTML = `
-        <div style="margin-bottom: 20px;">${msgs[Math.floor(Math.random() * msgs.length)]}</div>
-        <button onclick="this.parentElement.remove()" style="
-            background: #ff9ec1; 
-            color: white; 
-            border: none; 
-            padding: 8px 20px; 
-            border-radius: 12px; 
-            font-size: 1rem; 
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(255, 158, 193, 0.4);
-        ">Kapat 💖</button>
-    `;
+  
+    msg.innerHTML = `<div>${msgs[Math.floor(Math.random() * msgs.length)]}</div>`;
     
     document.body.appendChild(msg);
 
